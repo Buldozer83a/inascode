@@ -1,12 +1,14 @@
 [Unit]
-Description=Puma service
-After=syslog.target network.target
+Description=Puma HTTP Server
+After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/root/reddit
-ExecStart=/usr/local/bin/puma
-User=root
+EnvironmentFile=/home/Buldozer/db_config
+User=appuser
+WorkingDirectory=/home/Buldozer/reddit
+ExecStart=/bin/bash -lc 'puma'
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

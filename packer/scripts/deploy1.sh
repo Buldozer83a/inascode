@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 cd ~
-git clone https://github.com/Otus-DevOps-2017-11/reddit.git
+git clone https://github.com/Nonamed123/reddit.git
 cd ~/reddit
 bundle install
 mv /tmp/puma.service /lib/systemd/system/puma.service
